@@ -12,7 +12,7 @@ interface WeatherData {
   unit: string;
 }
 
-export default function Weatherwidget() {
+export default function WeatherWidget() {
   const [location, setLocation] = useState<string>(""); 
   const [weather, setWeather] = useState<WeatherData | null>(null); 
   const [error, setError] = useState<string | null>(null); 
@@ -45,7 +45,7 @@ export default function Weatherwidget() {
         unit: "C",
       };
       setWeather(weatherData);
-    } catch (error) {
+    } catch (err) {
       setError("City not found. Please try again.");
       setWeather(null);
     } finally {
